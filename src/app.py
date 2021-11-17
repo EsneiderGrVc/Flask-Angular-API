@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+""" Start an API """
+
+from flask import Flask
+from routes.books import books
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:root@localhost/crud'
+
+# Set SQLALCHEMY_TRACK_MODIFICATIONS=False to don't allow track modifications
+# and save memory.
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+SQLAlchemy(app)
+
+app.register_blueprint(books)
