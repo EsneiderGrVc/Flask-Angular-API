@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
 from models.book import Book
+from utils.db import db
 
 
 books = Blueprint('books', __name__)
@@ -14,9 +15,11 @@ def add_book():
         title = request.form['title']
         author = request.form['author']
         read = request.form['read']
+        print(request.form)
 
-        new_book = Book(title, author, read)
-        print(new_book)
+        new_book = Book(title=title, author=author, read=read)
+        db.session.add(new_book)
+        db.session.commit()
 
         return 'saving book'
 

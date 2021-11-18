@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:root@localhost/crud'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@127.0.0.1:3306/books'
 
 # Set SQLALCHEMY_TRACK_MODIFICATIONS=False to don't allow track modifications
 # and save memory.
