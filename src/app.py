@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Start an API """
+""" Setting up flask and database """
 
 from flask import Flask
 from routes.books import books
@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@127.0.0.1:3306/books'
 
-# Set SQLALCHEMY_TRACK_MODIFICATIONS=False to don't allow track modifications
-# and save memory.
+# Set SQLALCHEMY_TRACK_MODIFICATIONS=False to don't allow track
+# modifications and save memory.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 SQLAlchemy(app)
