@@ -1,0 +1,19 @@
+<button class="add-book" (click)="showForm()">Add Book</button>
+
+<div class="form-container" [class.hidden]="hidden" >
+    <form (ngSubmit)="addBook()">
+        <label for="title">Title</label>
+        <input [(ngModel)]="book.title" name="title" type="text" id="title" placeholder="Title" required>
+        <label for="author">Author</label>
+        <input [(ngModel)]="book.author" name="author" type="text" id="author" placeholder="Author" required>
+        <label for="read">Have you read this book?</label>
+        <input [(ngModel)]="read"  name="read" list="read-choice" id="read" placeholder="'Yes' or 'No'" required>
+        <datalist id="read-choice">
+            <option value="Yes"></option>
+            <option value="No"></option>
+        </datalist>
+        <p [class.alert]="alert">"Yes" or "No" are valid answers.</p>
+        <button *ngIf="book.author && book.title && read" 
+            class="send-book" type="submit" [routerLink]="['']">Save Book</button>
+    </form>
+</div>

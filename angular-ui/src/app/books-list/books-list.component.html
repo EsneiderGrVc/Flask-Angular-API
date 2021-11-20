@@ -1,3 +1,28 @@
+<div class="book-list-head">
+    <span class="book-title">
+        Title
+    </span >
+    <span class="book-author">
+        Author
+    </span>
+    <span class="book-read">
+        Read?
+    </span>
+</div>
 <ul>
-    <li *ngFor="let entry of entries">{{ entry.title }}</li>
+    <li *ngFor="let book of books">
+        <span class="book-title">
+            {{ book.title }}
+        </span>
+        <span class="book-author">
+            {{ book.author}}
+        </span>
+        <span class="book-read">
+            {{ book.read }}
+        </span>
+        <div class="btns">
+            <button class="btn edit-btn">Update</button>
+            <button class="btn delete-btn">Delete</button>
+        </div>
+    </li>
 </ul>

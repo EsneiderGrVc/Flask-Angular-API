@@ -1,0 +1,61 @@
+.book-list-head {
+    margin-top: 2rem;
+    padding: 0 10%;
+}
+.book-list-head span {
+    font-weight: bold;
+}
+li {
+    display: flex;
+    list-style: none;
+    /* border-top: 1px solid #bbb; */
+    padding: 1.6rem 0.5rem;
+}
+li:nth-child(odd) {
+    background-color: rgba(159, 185, 255, 0.1);
+}
+ul {
+    margin: 0;
+    padding: 2.4rem 10%;
+}
+span {
+    font-size: 2rem;
+    font-weight: normal;
+    align-self: center;
+    display: inline-block;
+}
+.book-title {
+    width: 40%;
+}
+.book-author {
+    width: 25%;
+}
+.book-read {
+    width: 10%;
+}
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    text-align: center;
+}
+.btn {
+    color: white;
+    font-size: 2rem;
+    padding: 0.8rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-btn {
+    background-color: rgba(165, 138, 19, 0.8);
+}
+.delete-btn {
+    background-color: rgba(153, 65, 42, 0.8);
+}
+.edit-btn:hover {
+    background-color: rgba(124, 101, 0, 0.8);
+}
+.delete-btn:hover {
+    background-color: rgba(145, 29, 0, 0.8);
+}

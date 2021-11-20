@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BooksApiService } from '../books-api.service';
-import { Book } from '../models/book';
+import { Book } from '../book-interface';
 
 @Component({
   selector: 'app-books-list',
@@ -9,14 +9,17 @@ import { Book } from '../models/book';
   styleUrls: ['./books-list.component.css']
 })
 export class BooksListComponent implements OnInit {
-  entries: Book[] = [];
+  books: Book[] = [];
   constructor(private booksApiService: BooksApiService) { }
 
   ngOnInit(): void {
     this.booksApiService.getData().subscribe(data => {
-      console.log("hello book-list")
-      this.entries = data;
-      console.log(this.entries)
+      data.forEach(e => {
+        (e.read)
+          ? e.read = "Yes"
+          : e.read = "No"
+        this.books.push(e)
+      })
     })
   }
 }

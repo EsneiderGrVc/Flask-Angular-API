@@ -1,0 +1,46 @@
+.add-book {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin: 6rem 0 1rem 10%;
+    padding: 0.8rem 1rem;
+    background-color: rgb(48, 150, 44);
+    border: none;
+    border-radius: 5px;
+}
+.add-book:hover {
+    background-color: rgb(26, 102, 24);
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+label, input {
+    display: block;
+    font-size: 1.6rem;
+}
+input {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+p {
+    margin-top: -1rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+.send-book {
+    font-size: 1.8rem;
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(44, 86, 150);
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.alert {
+    color: red;
+}

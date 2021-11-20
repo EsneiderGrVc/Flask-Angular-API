@@ -8,17 +8,21 @@ import { HeaderComponent } from './header/header.component';
 import { BooksApiService } from './books-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BooksListComponent } from './books-list/books-list.component';
+import { AddBookComponent } from './add-book/add-book.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BooksListComponent
+    BooksListComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [BooksApiService],
   bootstrap: [AppComponent]
