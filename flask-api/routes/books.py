@@ -42,7 +42,7 @@ def add_book():
 
         return Response(new_book.to_json(), status=201, mimetype='application/json')
 
-@books.route('/edit/<id>', strict_slashes=False, methods=['GET', 'POST'])
+@books.route('/edit/<id>', strict_slashes=False, methods=['GET', 'PUT'])
 def edit_book(id):
     """
         The edit_book function allows to edit
@@ -54,7 +54,7 @@ def edit_book(id):
         book = [Book.query.get(id)]
         result = book_schema.dump(book)
         return jsonify(result)
-    if request.method == 'POST': 
+    if request.method == 'PUT': 
         """Update the book record that maches the incoming id"""
         book = Book.query.get(id)
         book.title = request.json['title']
@@ -74,5 +74,6 @@ def delete_book(id):
         book = Book.query.get(id)
         db.session.delete(book)
         db.session.commit()
+        
+        return Response('{"message": "Element hass been deleted successfully"}', status=201, mimetype='application/json')
 
-        return Response(status=200)
