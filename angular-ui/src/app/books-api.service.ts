@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Book } from './book-interface';
 import { NewBook } from './models/book';
+import { DeleteBook } from './models/delete-book';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,12 @@ export class BooksApiService {
   }
   addBook(book: NewBook){
     return this.httpClient.post<NewBook>('http://localhost:3000/add', book)
+  }
+  deleteBook(book: DeleteBook) {
+    return this.httpClient.delete<DeleteBook>(`http://localhost:3000/delete/${book.id}`)
+  }
+  editBook(book: DeleteBook){
+    return this.httpClient.put<DeleteBook>(`http://localhost:3000/edit/${book.id}`, book)
   }
 
 }

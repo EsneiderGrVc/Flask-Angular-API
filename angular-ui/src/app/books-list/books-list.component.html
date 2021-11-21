@@ -21,8 +21,24 @@
             {{ book.read }}
         </span>
         <div class="btns">
-            <button class="btn edit-btn">Update</button>
-            <button class="btn delete-btn">Delete</button>
+            <button class="btn edit-btn" (click)="showUpdateForm(book)">Update</button>
+            <button class="btn delete-btn" (click)="deleteBook(book.id)">Delete</button>
         </div>
     </li>
+
+    <!-- Form Update -->
+    <div class="form-container" [class.hidden]="hidden">
+    <form (ngSubmit)="editBook(id)">
+        <label for="title">Title</label>
+        <input [(ngModel)]="updateBook.title" name="title" type="text" id="title" value="{{ title }}" required>
+        <label for="author">Author</label>
+        <input [(ngModel)]="updateBook.author" name="author" type="text" id="author" value="{{ author }}" required>
+        <label for="read">Have you read this book?</label>
+        <input [(ngModel)]="updateBook.read" name="read" type="text" id="read" placeholder="{{ read }}" required>
+
+        <p [class.alert]="alert">"Yes" or "No" are valid answers.</p>
+        <button class="send-book" type="submit">Save Book</button>
+        <button class="send-book abort-btn" (click)="abortUpdate()">Abort</button>
+    </form>
+</div>
 </ul>

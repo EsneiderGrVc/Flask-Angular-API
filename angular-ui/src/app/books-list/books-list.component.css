@@ -59,3 +59,67 @@ span {
 .delete-btn:hover {
     background-color: rgba(145, 29, 0, 0.8);
 }
+
+
+
+
+/* Form Style */
+.form-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(50, 50, 60, 0.7);
+}
+form {
+    position: absolute;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    padding: 3rem 3rem 1rem 3rem;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    background-color: #444;
+    box-shadow: 2px 2px 3px #aaa;
+}
+label{
+    color: #eee;
+    display: block;
+    font-size: 1.6rem;
+}
+input {
+    color: black;
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+p {
+    margin-top: -1rem;
+    font-size: 1.2rem;
+    color: #aaa;
+}
+.send-book {
+    font-size: 1.8rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: rgb(44, 86, 150);
+    display: block;
+    cursor: pointer;
+}
+.abort-btn {
+    background-color: rgba(153, 65, 42, 0.8);
+}
+.hidden {
+    display: none;
+}
+.alert {
+    color: red;
+}

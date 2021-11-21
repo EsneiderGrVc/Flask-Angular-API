@@ -31,10 +31,7 @@ export class AddBookComponent implements OnInit {
       this.alert = !this.alert;
       return;
     }
-    console.log(this.book)
-    this.booksApiService.addBook(this.book).subscribe(data => {
-      console.log(data)
-    })
+    this.booksApiService.addBook(this.book).subscribe()
+    window.location.reload()
   }
-
 }
