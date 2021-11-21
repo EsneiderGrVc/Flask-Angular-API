@@ -2,9 +2,11 @@ version: "3.7"
 
 services:
   mysql:
-    image: mysql:8.0.27
+    image: mysql
     ports:
-      - 4000:4000
+      - 3306:3306
+    expose:
+      - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: books
@@ -13,6 +15,8 @@ services:
     image: esneidergrvc/flask-api:v1
     ports:
       - 3000:3000
+    depends_on:
+      - mysql
 
   angular:
     image: esneidergrvc/angular-ui:v1
