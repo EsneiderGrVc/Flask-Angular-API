@@ -3,7 +3,8 @@ sudo docker run -d --network="host" -p 4000:4000 -e MYSQL_ROOT_PASSWORD=root -e 
 
 sudo docker run -d --network="host" -v $(pwd)/angular-ui:/ui -p 4200:4200 --name angular-ui node:16.13.0-alpine3.12
 sudo docker exec angular-ui npm install -g @angular/cli
-sudo docker exec angular-ui ui/ng serve
+sudo docker exec angular-ui "cd /ui"
+sudo docker exec angular-ui "ng serve"
 
 sudo docker run -d --network="host" -v $(pwd)/flask-api:/api -p 3000:3000 --name flask-api python
 sudo docker exec flask-api pip3 install -r api/requirements.txt
