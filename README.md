@@ -1,11 +1,26 @@
-### Create API container
-sudo docker run -d -it --network="host" -v <api_dir>:/home/api -p 3000:3000 --name flask-api python
+### Dependencies
 
-### Run DataBase container
-sudo docker run -d -it --network="host" -p 4000:4000 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=books --name mysql-db mysql
+- MySQL8.0
+- Python3.9
+- Node LTS 16.0
 
-### Run UI container
-```sudo docker run -d -it --network="host" -v $(pwd):/home/ui -p 4200:4200 --name angular-ui node:16.13.0-alpine3.12```
-```sudo docker exec -it angular-ui sh```
-``` cd ui/```
-```npm install --save-dev package.json```
+## Usage
+
+### Usage with Docker-compose
+
+- Exec with Docker compose
+  `sudo docker-compose up -d`
+
+### Usage locally
+
+- Install Flask dependencies
+  `pip3 install -r requirements.txt`
+
+- Run server-side application
+  `python3 flask-api/index.py`
+
+- Install Angular CLI -`npm install -g @angular/cli`
+- Install Angular project dependencies
+  `npm install --save-dev angular-ui/package.json`
+- Run client-side application
+  `cd angular-ui; ng serve`
