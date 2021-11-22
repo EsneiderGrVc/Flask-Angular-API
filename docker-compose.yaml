@@ -16,6 +16,6 @@ services:
 
   angular:
     image: esneidergrvc/angular-ui:v1
-    command: npm install --dev package.json
+    command: npm install --save-dev package.json
     ports:
       - 4200:4200
