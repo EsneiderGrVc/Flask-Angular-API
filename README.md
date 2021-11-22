@@ -1,4 +1,4 @@
-### Dependencies
+### Required Dependencies
 
 - MySQL8.0
 - Python3.9
