@@ -5,11 +5,17 @@ from flask import Flask
 from flask_cors import CORS
 from routes.books import books
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 CORS(app)
 
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:root@127.0.0.1:3306/books'
+user = os.environ['MYSQL_USER']
+password = os.environ['MYSQL_ROOT_PASSWORD']
+database = os.environ['MYSQL_DATABASE']
+host = os.environ['MYSQL_HOST']
+
+app.config['SQLALCHEMY_DATABASE_URI']=f'mysql+pymysql://{user}:{password}@{host}:3306/{database}'
 
 # Set SQLALCHEMY_TRACK_MODIFICATIONS=False to don't allow track
 # modifications and save memory.
