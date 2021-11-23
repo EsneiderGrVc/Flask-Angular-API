@@ -1,8 +1,10 @@
-FROM node:16.13.0-alpine.3.12
+FROM node:16.13.0-alpine3.12
 
 EXPOSE 4200
 
 WORKDIR /ui
+
+RUN npm install -g @angular/cli
 
 COPY . /ui
 
