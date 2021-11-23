@@ -2,20 +2,16 @@ version: "3.7"
 
 services:
   mysql:
-    image: mysql
+    image: mysql:8.0.27
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: books
+    ports:
+      - 32000:3306
 
   flask:
-    image: esneidergrvc/flask-api:v1
+    image: esneidergrvc/flask-api:v2
     ports:
-      - 3000:3000
-    depends_on:
+      - 5000:5000
+    links:
       - mysql
-
-  angular:
-    image: esneidergrvc/angular-ui:v1
-    command: npm install --save-dev package.json
-    ports:
-      - 4200:4200
