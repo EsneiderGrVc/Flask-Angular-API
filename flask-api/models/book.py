@@ -1,7 +1,5 @@
-from enum import unique
-from os import EX_TEMPFAIL, read
 #!/usr/bin/python3
-""" 
+"""
     Declare the Book class to represent
     the books table in the database.
 """

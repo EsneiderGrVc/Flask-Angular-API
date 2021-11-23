@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
     Declare all the routes to perform the API
     comunication with the client.
 """
