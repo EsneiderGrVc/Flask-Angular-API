@@ -10,7 +10,7 @@ services:
       - 32000:3306
 
   flask:
-    image: esneidergrvc/flask-api:v2
+    image: api
 
     environment:
       MYSQL_HOST: mysql
