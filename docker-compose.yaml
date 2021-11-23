@@ -11,6 +11,13 @@ services:
 
   flask:
     image: esneidergrvc/flask-api:v2
+
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: books
+
     ports:
       - 5000:5000
     links:
