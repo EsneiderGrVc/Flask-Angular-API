@@ -9,6 +9,11 @@ services:
     ports:
       - 32000:3306
 
+  angular:
+    image: ui
+    ports:
+      - 4200:4200
+
   flask:
     image: esneidergrvc/flask-api:v2
 
@@ -20,5 +25,7 @@ services:
 
     ports:
       - 5000:5000
+    depends_on:
+      - mysql
     links:
       - mysql
