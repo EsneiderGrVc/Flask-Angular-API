@@ -10,7 +10,7 @@ services:
       - 32000:3306
 
   angular:
-    image: ui
+    image: esneidergrvc/angular-ui:v1
     ports:
       - 4200:4200
 
